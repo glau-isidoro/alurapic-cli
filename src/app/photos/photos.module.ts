@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { PhotoComponent } from './photo/photo.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoService } from './photo/photo.service';
+import { PhotoFormComponent } from './photo-form/photo-form.component';
 
 
 @NgModule({
     declarations: [ 
         PhotoComponent,
-        PhotoListComponent
+        PhotoListComponent,
+        PhotoFormComponent
     ],
     exports: [ PhotoListComponent ],
     imports: [ 
