@@ -13,6 +13,7 @@ import { PlatformDetectorService } from './core/platform-detector/platform-detec
 import { TokenService } from './core/token/token.service';
 import { CoreModule } from './core/core.module';
 import { UserService } from './core/user/user.service';
+import { AuthGuard } from './core/auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserService } from './core/user/user.service';
     AuthService,
     PlatformDetectorService,
     TokenService,
-    UserService
+    UserService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -13,9 +13,10 @@ export class UserService {
 //  private userSubject = new Subject<User>(); 
 //  Com BehaviorSubject o header recebe user no subscribe quando recarrega.
     private userSubject = new BehaviorSubject<User>(null);
+    private username: string;
 
     constructor(private tokenService: TokenService) {
-    this.tokenService.hasToken() && this.decodeAndNotify();
+        this.tokenService.hasToken() && this.decodeAndNotify();
     }
 
     setToken(token: string): void {
@@ -27,14 +28,23 @@ export class UserService {
         return this.userSubject.asObservable();
     }
 
-    private decodeAndNotify() {
+    getUsername(): string {
+        return this.username;
+    }
+
+    private decodeAndNotify(): void {
         const token = this.tokenService.getToken();
         const user = jwt_decode(token) as User;
+        this.username = user.name;
         this.userSubject.next(user);
     }
 
-    logout() {
+    logout(): void {
         this.tokenService.removeToken();
         this.userSubject.next(null);
+    }
+
+    isLogged(): boolean {
+        return this.tokenService.hasToken();
     }
 }
