@@ -8,6 +8,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { HomeModule } from './home/home.module';
+import { AuthService } from './core/auth.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,11 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     HomeModule
   ],
-  providers: [ PhotoService, PhotoListResolver ],
+  providers: [
+    PhotoService,
+    PhotoListResolver,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

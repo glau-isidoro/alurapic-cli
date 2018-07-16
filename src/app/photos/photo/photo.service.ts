@@ -17,6 +17,7 @@ export class PhotoService {
     const pageNumber = new HttpParams().append('page', page.toString());
     return this.http.get<Photo[]>(`${API}/${userName}/photos`, { params: pageNumber });
     //se o nome de pageNumber fosse params, poderiamos omitir o params: e passar só { params }
+    //pode fazer assim quando o nome do parametro é o mesmo nome da variável
   }
 
 }
