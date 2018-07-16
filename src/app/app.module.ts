@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { AuthService } from './core/auth/auth.service';
 import { PlatformDetectorService } from './core/platform-detector/platform-detector.service';
 import { TokenService } from './core/token/token.service';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TokenService } from './core/token/token.service';
     PhotosModule,
     ErrorsModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    CoreModule
   ],
   providers: [
     PhotoService,
