@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../core/auth.service';
 import { Router } from '@angular/router';
@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
     
     loginForm: FormGroup;
+//  para pegar referencia de um elemento do dom e poder manipula-lo.
+//  Referencia #userNameInput no template 
+    @ViewChild('userNameInput') userNameInput: ElementRef;
+//  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
     
     constructor(
         private formBuilder: FormBuilder,
@@ -35,6 +39,8 @@ export class SignInComponent implements OnInit {
                 err => {
                     console.log(err);
                     this.loginForm.reset();
+                    //  autofocus caso o login falhe.  
+                    this.userNameInput.nativeElement.focus();
                     alert('invalid username or password');
                 }
 

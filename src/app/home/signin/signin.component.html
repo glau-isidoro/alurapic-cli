@@ -2,8 +2,12 @@
 
 <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
     <div class="form-group">
-        <input formControlName="userName" class="form-control"
-            placeholder="user name" autofocus>
+        <input #userNameInput
+            formControlName="userName"
+            class="form-control"
+            placeholder="user name"
+            autofocus>
+            
         <!-- com esse ? no errors, o required só vai ser avaliado se o errors existir,
             evitando erro de null não ter required. -->
         <app-vmessage *ngIf="loginForm.get('userName').errors?.required"
