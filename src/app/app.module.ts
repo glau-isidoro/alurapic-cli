@@ -8,7 +8,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { HomeModule } from './home/home.module';
-import { AuthService } from './core/auth.service';
+import { AuthService } from './core/auth/auth.service';
+import { PlatformDetectorService } from './core/platform-detector/platform-detector.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthService } from './core/auth.service';
   providers: [
     PhotoService,
     PhotoListResolver,
-    AuthService
+    AuthService,
+    PlatformDetectorService
   ],
   bootstrap: [AppComponent]
 })
