@@ -10,6 +10,7 @@ import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { HomeModule } from './home/home.module';
 import { AuthService } from './core/auth/auth.service';
 import { PlatformDetectorService } from './core/platform-detector/platform-detector.service';
+import { TokenService } from './core/token/token.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PlatformDetectorService } from './core/platform-detector/platform-detec
     PhotoService,
     PhotoListResolver,
     AuthService,
-    PlatformDetectorService
+    PlatformDetectorService,
+    TokenService
   ],
   bootstrap: [AppComponent]
 })
