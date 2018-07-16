@@ -11,7 +11,7 @@ export class TokenService {
         return !!this.getToken();
     }
 
-    setToken(token): void {
+    setToken(token: string): void {
         //armazena o token no navegador
         window.localStorage.setItem(KEY, token);
     }

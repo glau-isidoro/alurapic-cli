@@ -12,6 +12,7 @@ import { AuthService } from './core/auth/auth.service';
 import { PlatformDetectorService } from './core/platform-detector/platform-detector.service';
 import { TokenService } from './core/token/token.service';
 import { CoreModule } from './core/core.module';
+import { UserService } from './core/user/user.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CoreModule } from './core/core.module';
     PhotoListResolver,
     AuthService,
     PlatformDetectorService,
-    TokenService
+    TokenService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
