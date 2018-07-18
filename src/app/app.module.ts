@@ -14,6 +14,8 @@ import { TokenService } from './core/token/token.service';
 import { CoreModule } from './core/core.module';
 import { UserService } from './core/user/user.service';
 import { AuthGuard } from './core/auth/auth.guard';
+import { SignUpService } from './home/signup/signup.service';
+import { UserNotTakenValidatorService } from './home/signup/user-not-taken.validator.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AuthGuard } from './core/auth/auth.guard';
     PlatformDetectorService,
     TokenService,
     UserService,
-    AuthGuard
+    AuthGuard,
+    SignUpService,
+    UserNotTakenValidatorService
   ],
   bootstrap: [AppComponent]
 })

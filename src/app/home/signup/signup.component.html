@@ -38,6 +38,10 @@
         <app-vmessage *ngIf="signupForm.get('userName').errors?.lowercase"
             message="Must be lower case, only letters, numbers, hiffen and underscore.">
         </app-vmessage>
+        <app-vmessage *ngIf="signupForm.get('userName').errors?.usernametaken"
+            message="Username already in use.">
+        </app-vmessage>
+        <small *ngIf="signupForm.get('userName').valid" class="text-success">Username available</small>
     </div>
 
     <div class="form-group">
@@ -53,7 +57,7 @@
         </app-vmessage>
     </div>
 
-    <button class="btn btn-primary btn-block">Register</button>
+    <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Register</button>
 
     <p>Already a user?
         <a [routerLink]="['']">Sing in!</a>
