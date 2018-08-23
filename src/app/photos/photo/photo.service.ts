@@ -20,4 +20,11 @@ export class PhotoService {
     //pode fazer assim quando o nome do parametro é o mesmo nome da variável
   }
 
+  upload(description: string, allowComments: boolean, photo: File) {
+    const formData = new FormData()
+    formData.append('description', description)
+    formData.append('allowComments', allowComments ? 'true' : 'false')
+    formData.append('imageFile', photo)
+    return this.http.post(API + '/photos/upload', formData)
+  }
 }
